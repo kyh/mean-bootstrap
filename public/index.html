@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+
+	<title>Nomnomnom</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+
+</head>
+<body ng-app="feed-me" ng-controller="MainController as Main">
+<div class="container">
+
+	<div ng-view></div>
+
+	<!-- JS -->
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+
+	<script src="app/app.js"></script>
+	<script src="app/main.controller.js"></script>
+	<script src="app/home/home.controller.js"></script>
+	<script src="app/auth/login/login.controller.js"></script>
+	<script src="app/auth/signup/signup.controller.js"></script>
+
+
+</div>
+</body>
+</html>
