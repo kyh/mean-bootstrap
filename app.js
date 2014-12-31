@@ -11,7 +11,7 @@ var bodyParser     	= require('body-parser');
 var session      	= require('express-session');
 var methodOverride 	= require('method-override');
 var app            	= express();
-var api 			= require('./app/api/crud');
+var router 			= express.Router();
 
 // configuration ===========================================
 var config          = require('./config/base');
@@ -19,7 +19,6 @@ var db 				= require('./config/db');
 
 // mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
 // require('./config/passport')(passport); // pass passport for configuration
-
 
 // get all data/stuff of the body (POST) parameters
 app.use(morgan('dev'));
@@ -35,13 +34,11 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
-app.use('/api', api);
+app.use('/api', router);
 
 // routes ==================================================
-require('./app/routes')(app, passport);
+require('./app/routes')(app);
+require('./app/api/crud')(router);
 require('./app/socket')(config);
 
-// start app ===============================================
-app.listen(config.port);	
-console.log('Magic happens on port ' + config.port); 			// shoutout to the user
-exports = module.exports = app; 						// expose app
+exports = module.exports = app; // expose app

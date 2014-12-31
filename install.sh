@@ -1,4 +1,4 @@
 #!/bin/bash
 npm install
 bower install
-nodemon server.js
+nodemon bin/www.js
