@@ -4,7 +4,7 @@ MEAN-bootstrap
 Bootstrap a MEAN application.
 
 - Run ```./install.sh``` in terminal to install the app
-- Use ```node server.js``` to run the application
+- Use ```node bin/www.js``` to run the application
 
 TO-DO:
 - Add Authentication
