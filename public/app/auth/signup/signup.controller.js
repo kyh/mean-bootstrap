@@ -1,7 +1,7 @@
 (function() {
 
 	angular
-		.module('feed-me')
+		.module('bootstrap')
 		.controller('SignupController', SignupController);
 
 	function SignupController() {
