@@ -7,6 +7,7 @@ Bootstrap a MEAN application.
 - Use ```node bin/www.js``` to run the application
 
 TO-DO:
+==============
 - Add Authentication
 - Include Grunt
 - Add in basic SCSS files and remove Bootstrap

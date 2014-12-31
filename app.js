@@ -37,8 +37,8 @@ app.use(express.static(__dirname + '/public'));
 app.use('/api', router);
 
 // routes ==================================================
-require('./app/routes')(app);
-require('./app/api/crud')(router);
-require('./app/socket')(config);
+require('./server/routes')(app);
+require('./server/api/crud')(router);
+require('./server/socket')(config);
 
 exports = module.exports = app; // expose app
