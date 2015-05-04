@@ -1,3 +1,3 @@
 module.exports = {
-	url : 'mongodb://<user>:<pass>@mongo.onmodulus.net:27017/uw45mypu'
+	url : 'mongodb://test:test123@ds029821.mongolab.com:29821/bootstrap-db'
 }

@@ -27,7 +27,7 @@ module.exports = function(router){
                 if(err)
                     res.send(err);
 
-               for (prop in req.body){
+               for (var prop in req.body){
                     movie[prop] = req.body[prop];
                }
 
@@ -61,4 +61,4 @@ module.exports = function(router){
                 res.json({ message: 'Successfully deleted' });
             });
         });
-}
+};

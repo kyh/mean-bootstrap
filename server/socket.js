@@ -1,9 +1,10 @@
 var WebSocketServer = require('ws').Server;
+var Config          = require('../config/base');
 
-module.exports = function(config) {
+module.exports = function() {
 
     var wss = new WebSocketServer({
-        port: config.socketPort
+        port: Config.socketPort
     });
 
     wss.on('connection', function(ws) {
