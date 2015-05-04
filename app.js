@@ -10,6 +10,7 @@ var cookieParser 	= require('cookie-parser');
 var bodyParser     	= require('body-parser');
 var session      	= require('express-session');
 var methodOverride 	= require('method-override');
+
 var app            	= express();
 var router 			= express.Router();
 
@@ -17,7 +18,7 @@ var router 			= express.Router();
 var config          = require('./config/base');
 var db 				= require('./config/db');
 
-// mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
+mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
 // require('./config/passport')(passport); // pass passport for configuration
 
 // get all data/stuff of the body (POST) parameters
@@ -35,10 +36,11 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 app.use('/api', router);
+// router.all('/api/*', requireAuthentication);
 
 // routes ==================================================
 require('./server/routes')(app);
 require('./server/api/crud')(router);
-require('./server/socket')(config);
+require('./server/socket')();
 
 exports = module.exports = app; // expose app
